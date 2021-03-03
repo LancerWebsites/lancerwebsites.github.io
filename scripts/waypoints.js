@@ -26,7 +26,6 @@ var waypoint_home = new Waypoint({
   })
 
 
-
   var waypoint_home_lower = new Waypoint({
     element: document.getElementById('home'),
     handler: function() {
