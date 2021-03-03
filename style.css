@@ -1,0 +1,139 @@
+html {
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 2px solid #d3d3d3;
+  background: #ffdba6;
+  background: linear-gradient(180deg, #ffdba6 0%, white 100%);
+}
+header .logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header img {
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+}
+header h1 {
+  font-size: 1.5em;
+}
+header a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.navigation {
+  width: 302px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 90px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 1px;
+}
+.navigation li {
+  width: 100px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.navigation a:hover {
+  font-weight: bold;
+}
+.navigation .current {
+  font-weight: bold;
+  border-radius: 90px;
+  background-color: #ffdba6;
+}
+
+.header-padding {
+  height: 80px;
+  width: 100%;
+}
+
+main {
+  scroll-snap-type: y mandatory;
+}
+
+.page {
+  width: 100vw;
+  height: calc(100vh - 80px);
+  scroll-snap-align: start;
+  background: #ffdba6;
+  background: linear-gradient(180deg, #ffdba6 0%, white 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.canvas {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  height: 90%;
+  width: 90%;
+  border: 2px solid #d3d3d3;
+}
+
+h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 576px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .logo {
+    margin: 0;
+    margin-top: 5px;
+  }
+
+  .navigation {
+    margin: 0;
+    margin-top: 5px;
+  }
+
+  .header-padding {
+    height: 105px;
+  }
+
+  header {
+    height: 105px;
+  }
+
+  .page {
+    height: calc(100vh - 105px);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
