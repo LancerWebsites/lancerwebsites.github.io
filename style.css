@@ -1,6 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   padding: 0;
-  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
@@ -16,6 +19,7 @@ header {
   top: 0;
   width: 100vw;
   height: 80px;
+  z-index: 10;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -29,11 +33,20 @@ header .logo {
   display: flex;
   flex-direction: row;
   align-items: center;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 header img {
   height: 60px;
   width: 60px;
   margin-right: 10px;
+  animation-delay: 1s;
+  animation: spin 1s;
 }
 header h1 {
   font-size: 1.5em;
@@ -43,6 +56,14 @@ header a {
   color: #000000;
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .navigation {
   width: 302px;
   list-style: none;
@@ -62,6 +83,15 @@ header a {
   text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+.navigation a {
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 .navigation a:hover {
   font-weight: bold;
@@ -84,6 +114,7 @@ main {
 .page {
   width: 100vw;
   height: calc(100vh - 80px);
+  min-height: 600px;
   scroll-snap-align: start;
   background: #ffdba6;
   background: linear-gradient(180deg, #ffdba6 0%, white 100%);
@@ -96,10 +127,11 @@ main {
 
 .canvas {
   background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.28) inset;
   border-radius: 5px;
   height: 90%;
   width: 90%;
-  border: 2px solid #d3d3d3;
+  max-width: 1000px;
 }
 
 h2 {
@@ -107,14 +139,161 @@ h2 {
   text-decoration: underline;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home .top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.home .github {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 400px;
+  text-align: center;
+}
+.home .github p {
+  max-width: 250px;
+}
+.home .github .logo {
+  color: #000000;
+  width: 150px;
+}
+.home .github .svg-inline--fa {
+  font-size: 100px;
+}
+.home .inhouse {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 400px;
+  text-align: center;
+}
+.home .inhouse .fa-heart {
+  color: #eda7ff;
+}
+.home .inhouse p {
+  max-width: 250px;
+}
+.home .inhouse .carousel {
+  font-size: 100px;
+  position: relative;
+  width: 150px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home .inhouse .carousel .svg-inline--fa {
+  position: absolute;
+  bottom: 0;
+}
+.home .inhouse .carousel .hide {
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-name: fade-out;
+  opacity: 0;
+}
+.home .inhouse .carousel .show {
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-name: fade-in;
+  opacity: 1;
+}
+.home .middle {
+  text-align: center;
+  max-width: 400px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.about {
+  background: linear-gradient(0deg, #ffdba6 0%, white 100%);
+}
+
+.contact .discord {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+}
+.contact .discord img {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.cookie-footer {
+  display: inline-flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 80px;
+  z-index: 10;
+  background-color: black;
+  opacity: 0.8;
+  padding: 10px;
+}
+.cookie-footer p {
+  color: white;
+  min-width: 650px;
+}
+.cookie-footer button {
+  width: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 100px;
+  border: none;
+}
+.cookie-footer a {
+  color: lightblue;
+  width: 80px;
+}
+.cookie-footer.hide {
+  display: none;
+}
+
 @media screen and (max-width: 576px) {
   header {
     flex-direction: column;
     align-items: center;
     padding: 0;
+    height: 105px;
   }
-
-  .logo {
+  header .logo {
     margin: 0;
     margin-top: 5px;
   }
@@ -128,13 +307,86 @@ h2 {
     height: 105px;
   }
 
-  header {
-    height: 105px;
-  }
-
   .page {
     height: calc(100vh - 105px);
   }
+
+  .home .top {
+    flex-direction: column;
+  }
+  .home .github {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .home .inhouse {
+    flex-direction: column-reverse;
+  }
+}
+@media screen and (max-width: 768px) {
+  .home .top {
+    flex-direction: column;
+  }
+
+  .cookie-footer {
+    flex-direction: column;
+    text-align: center;
+    height: 150px;
+  }
+  .cookie-footer a {
+    margin-top: 5px;
+  }
+  .cookie-footer p {
+    min-width: 0px;
+    max-width: 70vw;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .cookie-footer button {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffdba6;
+  border: 2px outset #ffffff;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffdba6;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #ffdba6;
+}
+
+::-webkit-scrollbar-track {
+  background: #e6e6e6;
+  border: 2px inset #ffffff;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #dedede;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 /*# sourceMappingURL=style.css.map */
