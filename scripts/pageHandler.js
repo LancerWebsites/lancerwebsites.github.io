@@ -110,16 +110,24 @@ var slides = document.getElementById('carousel').children;
 
 var current_slide = 0;
 
+let visible = true;
+
+document.addEventListener('visibilitychange', function() {
+   visible = false;
+});
+
 function slide() {
   setTimeout(() => {
-    slides[current_slide].classList.remove("show");
-    slides[current_slide].classList.add("hide");
-    current_slide++;
-    if (current_slide >= slides.length) {
-      current_slide = 0;
+    if (visible) {
+      slides[current_slide].classList.remove("show");
+      slides[current_slide].classList.add("hide");
+      current_slide++;
+      if (current_slide >= slides.length) {
+        current_slide = 0;
+      }
+      slides[current_slide].classList.remove("hide");
+      slides[current_slide].classList.add("show");
     }
-    slides[current_slide].classList.remove("hide");
-    slides[current_slide].classList.add("show");
     slide()
   }, interval);
 }
