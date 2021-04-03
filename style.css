@@ -202,6 +202,7 @@ h2 {
 .home .inhouse .carousel .svg-inline--fa {
   position: absolute;
   bottom: 0;
+  background-color: #ffffff;
 }
 .home .inhouse .carousel .hide {
   animation-fill-mode: forwards;
@@ -242,12 +243,50 @@ h2 {
   background: linear-gradient(0deg, #ffdba6 0%, white 100%);
 }
 
-.contact .discord {
+.contact .canvas {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 300px;
+}
+.contact form {
+  max-width: 300px;
+}
+.contact form input, .contact form textarea {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+.contact form input:focus, .contact form textarea:focus {
+  box-shadow: 0 0 5px #51cbee;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #51cbee;
+}
+.contact form input {
+  border: none;
+  border-bottom: 2px solid #C1C1C1;
+  width: 49%;
+}
+.contact form textarea {
+  resize: none;
+  width: 98.75%;
+  height: 200px;
+}
+.contact form button {
+  width: 98.75%;
+  border: none;
+  background-color: #ffdba6;
+  border-radius: 5px;
+  height: 30px;
+}
+.contact .discord {
+  width: 150px;
 }
 .contact .discord img {
   border-radius: 5px;
@@ -291,7 +330,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     padding: 0;
-    height: 105px;
+    height: 115px;
   }
   header .logo {
     margin: 0;
@@ -304,7 +343,7 @@ h2 {
   }
 
   .header-padding {
-    height: 105px;
+    height: 115px;
   }
 
   .page {
@@ -325,6 +364,7 @@ h2 {
 @media screen and (max-width: 768px) {
   .home .top {
     flex-direction: column;
+    height: 100%;
   }
 
   .cookie-footer {
