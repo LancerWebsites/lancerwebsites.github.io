@@ -242,6 +242,11 @@ h2 {
 .about {
   background: linear-gradient(0deg, #ffdba6 0%, white 100%);
 }
+.about p {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+}
 
 .contact .canvas {
   display: flex;
@@ -257,10 +262,11 @@ h2 {
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   outline: none;
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
 }
 .contact form input:focus, .contact form textarea:focus {
   box-shadow: 0 0 5px #51cbee;
@@ -270,7 +276,8 @@ h2 {
 }
 .contact form input {
   border: none;
-  border-bottom: 2px solid #C1C1C1;
+  border-bottom: 1px solid #C1C1C1;
+  border-left: 2px solid #C1C1C1;
   width: 49%;
 }
 .contact form textarea {
